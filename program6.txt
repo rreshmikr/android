@@ -1,0 +1,128 @@
+proram 6
+
+mainactivity.java
+package com.example.program6;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    Button b,bb,bc,bd;
+    EditText et1,et2;
+    TextView tn1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b=findViewById(R.id.b1);
+        bb=findViewById(R.id.b2);
+        bc=findViewById(R.id.b3);
+        bd=findViewById(R.id.b4);
+        et1=findViewById(R.id.et1);
+        et2=findViewById(R.id.et2);
+        tn1=findViewById(R.id.tn1);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Double a1= Double.parseDouble(et1.getText().toString());
+                Double a2= Double.parseDouble(et2.getText().toString());
+                Double r=a1+a2;
+                tn1.setText("Result is"+String.valueOf(r));
+            }
+        });
+        bb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Double a1= Double.parseDouble(et1.getText().toString());
+                Double a2= Double.parseDouble(et2.getText().toString());
+                Double r=a1-a2;
+                tn1.setText("Result is"+String.valueOf(r));
+
+            }
+        });
+        bc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Double a1= Double.parseDouble(et1.getText().toString());
+                Double a2= Double.parseDouble(et2.getText().toString());
+                Double r=a1*a2;
+                tn1.setText("Result is"+String.valueOf(r));
+            }
+        });
+        bd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Double a1= Double.parseDouble(et1.getText().toString());
+                Double a2= Double.parseDouble(et2.getText().toString());
+                Double r=a1/a2;
+                tn1.setText("Result is"+String.valueOf(r));
+            }
+        });
+    }
+}
+
+
+xml....
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="enter the first number"/>
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter second number"/>
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/b1"
+            android:text="ADD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/b2"
+            android:text="SUB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/b3"
+            android:text="MUL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/b4"
+            android:text="DIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+</LinearLayout>
